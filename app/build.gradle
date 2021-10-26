@@ -1,6 +1,8 @@
 plugins {
     id "com.android.application"
     id "kotlin-android"
+    id "kotlin-kapt"
+    id "dagger.hilt.android.plugin"
 }
 
 android {
@@ -58,8 +60,27 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$rootProject.ext.versions.lifecycle"
     implementation "androidx.activity:activity-compose:$rootProject.ext.versions.activityCompose"
     testImplementation "junit:junit:$rootProject.ext.versions.junit"
+
     androidTestImplementation "androidx.test.ext:junit:$rootProject.ext.versions.androidxTest"
     androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.ext.versions.espresso"
     androidTestImplementation "androidx.compose.ui:ui-test-junit4:$rootProject.ext.versions.compose"
     debugImplementation "androidx.compose.ui:ui-tooling:$rootProject.ext.versions.compose"
+
+    //Coroutines
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.1'
+
+    //Dagger - Hilt
+    implementation "com.google.dagger:hilt-android:$rootProject.ext.versions.hiltAndroid"
+    kapt "com.google.dagger:hilt-android-compiler:$rootProject.ext.versions.hiltAndroidCompiler"
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$rootProject.ext.versions.hiltLifecycleViewmodel"
+    kapt "androidx.hilt:hilt-compiler:$rootProject.ext.versions.hiltCompiler"
+
+    // Room
+    implementation "androidx.room:room-runtime:$rootProject.ext.versions.roomRuntime"
+    kapt "androidx.room:room-compiler:$rootProject.ext.versions.roomCompiler"
+
+    //Kotlin extensions and coroutines support for Room
+    implementation "androidx.room:room-ktx:$rootProject.ext.versions.roomKtx"
+
 }

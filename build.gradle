@@ -1,4 +1,4 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
+ // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     ext.kotlinVersion = "1.5.31"
 
@@ -10,6 +10,10 @@ buildscript {
 
     // https://github.com/ben-manes/gradle-versions-plugin
     ext.versionsPluginVersion = "0.29.0"
+
+    //https://mvnrepository.com/artifact/com.google.dagger/hilt-android-gradle-plugin/2.38.1
+    ext.hiltAndroidGradlePluginVersion = "2.38.1"
+
 
     repositories {
         google()
@@ -25,6 +29,8 @@ buildscript {
         classpath "org.jlleitschuh.gradle:ktlint-gradle:$ktlintPluginVersion"
         classpath "io.gitlab.arturbosch.detekt:detekt-gradle-plugin:$detektVersion"
         classpath "com.github.ben-manes:gradle-versions-plugin:$versionsPluginVersion"
+
+        classpath "com.google.dagger:hilt-android-gradle-plugin:$hiltAndroidGradlePluginVersion"
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files

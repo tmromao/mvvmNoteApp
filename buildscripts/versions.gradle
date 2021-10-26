@@ -18,5 +18,19 @@ ext {
             espresso       : "3.4.0",
             // https://github.com/material-components/material-components-android/releases
             material       : "1.4.0",
+
+            hiltAndroid: "2.38.1",
+
+            hiltAndroidCompiler: "2.37",
+
+            hiltLifecycleViewmodel: "1.0.0-alpha03",
+
+            hiltCompiler:"1.0.0",
+
+            roomRuntime:"2.3.0",
+
+            roomCompiler:"2.3.0",
+
+            roomKtx:"2.3.0",
     ]
 }
