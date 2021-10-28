@@ -43,7 +43,7 @@ class NoteViewModel @Inject constructor(
                     return
                 }
                 getNotes(
-
+                    event.noteOrder
                 )
             }
             is NotesEvent.DeleteNote -> {
