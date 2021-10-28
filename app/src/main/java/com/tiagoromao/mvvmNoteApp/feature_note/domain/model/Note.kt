@@ -4,6 +4,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.tiagoromao.mvvmNoteApp.ui.theme.*
+import java.lang.Exception
 
 
 @Entity
@@ -21,3 +22,5 @@ data class Note(
     }
 
 }
+
+class InvalidNoteException(message:String):Exception(message)

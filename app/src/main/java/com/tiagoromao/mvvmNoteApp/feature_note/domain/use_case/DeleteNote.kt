@@ -8,7 +8,8 @@ class DeleteNote(
 ) {
 
     suspend operator fun invoke(note: Note) {
-        repository.deleteNote(note)
+        repository.deleteNote(note
+        )
     }
 
 
