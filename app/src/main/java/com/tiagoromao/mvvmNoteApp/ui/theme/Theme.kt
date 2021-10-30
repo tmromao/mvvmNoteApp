@@ -17,7 +17,7 @@ private val DarkColorPalette = darkColors(
 
 
 @Composable
-fun AndroidAppTemplateTheme(
+fun mvvmNoteAppTheme(
     darkTheme: Boolean = true,
     content: @Composable() () -> Unit
 ) {
