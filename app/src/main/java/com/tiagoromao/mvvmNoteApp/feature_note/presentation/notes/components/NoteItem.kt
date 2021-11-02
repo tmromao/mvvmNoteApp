@@ -17,10 +17,12 @@ import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.clipPath
 import androidx.compose.ui.graphics.vector.Path
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.core.graphics.ColorUtils
+import com.tiagoromao.mvvmNoteApp.core.util.TestTags
 import com.tiagoromao.mvvmNoteApp.feature_note.domain.model.Note
 import com.tiagoromao.mvvmNoteApp.feature_note.domain.util.NoteOrder
 
@@ -35,6 +37,7 @@ fun NoteItem(
 
     Box(
         modifier = modifier
+            .testTag(TestTags.NOTE_ITEM)
     ) {
         Canvas(
             modifier = Modifier.matchParentSize()

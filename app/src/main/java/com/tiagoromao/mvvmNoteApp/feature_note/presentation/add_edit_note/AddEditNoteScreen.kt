@@ -24,6 +24,7 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import com.tiagoromao.mvvmNoteApp.core.util.TestTags
 import com.tiagoromao.mvvmNoteApp.feature_note.domain.model.Note
 import com.tiagoromao.mvvmNoteApp.feature_note.presentation.add_edit_note.AddEditNoteEvent
 import com.tiagoromao.mvvmNoteApp.feature_note.presentation.add_edit_note.AddEditNoteViewModel
@@ -79,7 +80,7 @@ fun AddEditNoteScreen(
                 backgroundColor = MaterialTheme.colors.primary
             )
             {
-                Icon(imageVector = Icons.Default.Save, contentDescription = "Save note")
+                Icon(imageVector = Icons.Default.Save, contentDescription = "Save")
 
             }
 
@@ -145,7 +146,8 @@ fun AddEditNoteScreen(
                 },
                 isHintVisible = titleState.isHintVisible,
                 singleLine = true,
-                textStyle = MaterialTheme.typography.h5
+                textStyle = MaterialTheme.typography.h5,
+                testTag = TestTags.TITLE_TEXT_FIELD
 
 
             )
@@ -162,7 +164,8 @@ fun AddEditNoteScreen(
                 },
                 isHintVisible = contentState.isHintVisible,
                 textStyle = MaterialTheme.typography.body1,
-                modifier = Modifier.fillMaxHeight()
+                modifier = Modifier.fillMaxHeight(),
+                testTag = TestTags.CONTENT_TEXT_FIELD
 
             )
 

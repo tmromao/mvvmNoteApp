@@ -8,13 +8,16 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.Sort
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import com.tiagoromao.mvvmNoteApp.core.util.TestTags
 import com.tiagoromao.mvvmNoteApp.feature_note.domain.model.Note
 import com.tiagoromao.mvvmNoteApp.feature_note.presentation.notes.components.NoteItem
 import com.tiagoromao.mvvmNoteApp.feature_note.presentation.notes.components.OrderSection
@@ -45,7 +48,7 @@ fun NotesScreen(
                 backgroundColor = MaterialTheme.colors.primary
             ) {
 
-                Icon(imageVector = Icons.Default.Add, contentDescription = "Add note")
+                Icon(imageVector = Icons.Default.Add, contentDescription = "Add")
 
             }
 
@@ -78,7 +81,7 @@ fun NotesScreen(
                     },
                 ) {
                     Icon(
-                        imageVector = Icons.Default.Add,
+                        imageVector = Icons.Default.Sort,
                         contentDescription = "Sort"
                     )
 
@@ -93,7 +96,8 @@ fun NotesScreen(
 
                 OrderSection(modifier = Modifier
                     .fillMaxWidth()
-                    .padding(vertical = 16.dp),
+                    .padding(vertical = 16.dp)
+                    .testTag(TestTags.ORDER_SECTION),
                     noteOrder = state.noteOrder,
                     onOrderChange = {
                         viewModel.onEvent(NotesEvent.Order(it))
